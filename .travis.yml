@@ -10,17 +10,10 @@ before_install:
     - source ~/travis-perl-helpers/init
     - build-perl
     - perl -V
-    - "cpanm -n Mojolicious"
-    - "cpanm -n MojoX::JSON::RPC"
-    - "cpanm -n Guard"
-    - "cpanm -n JSON"
-    - "cpanm -n Data::UUID"
+    - "cpanm -n Test::Simple"
     - "cpanm -n Test::More"
-    - "cpanm -n Test::Mojo"
-    - "cpanm -n Test::MockModule"
-    - "cpanm -n Test::MockObject"
-    - "cpanm -n Time::Out"
-    - "cpanm -n Class::Method::Modifiers"
+    - "cpanm -n File::Spec::Functions"
+    - "cpanm -n File::Basename"
     - "cpanm -n --installdeps ."
 script:
     perl Makefile.PL && make test
