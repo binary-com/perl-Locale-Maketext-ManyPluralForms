@@ -1,4 +1,14 @@
 # perl-Locale-Maketext-ManyPluralForms
+[![Build Status](https://travis-ci.org/binary-com/perl-Locale-Maketext-ManyPluralForms.svg?branch=master)](https://travis-ci.org/binary-com/perl-Locale-Maketext-ManyPluralForms)
+
+#### INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
 
 # NAME
 
