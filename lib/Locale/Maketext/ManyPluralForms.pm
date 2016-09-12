@@ -5,6 +5,8 @@ use warnings;
 
 our $VERSION = '0.01';
 
+use Encode qw/encode_utf8/;
+
 require Locale::Maketext::Lexicon;
 
 use parent 'Locale::Maketext';
@@ -32,6 +34,13 @@ sub plural {
     }
     my $pos = $self->{_plural}($num);
     $pos = $#strings if $pos > $#strings;
+    unless (defined $num) {
+        my @encoded_params;
+        eval {@encoded_params = map {encode_utf8($_)} @strings};
+        my $param_dump = join ";", (@encoded_params ? @encoded_params : @strings);
+        warn 'Use of uninitialized value $num in '. ref($self). " with params: '". $param_dump ."'";
+        $num = 1;
+    }
     return sprintf $strings[$pos], $num;
 }
 

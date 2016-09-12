@@ -20,6 +20,7 @@ WriteMakefile(
         'Test::More'            => 0,
         'File::Spec::Functions' => 0,
         'File::Basename'        => 0,
+        'Encode'                => 0,
     },
     CONFIGURE_REQUIRES => {
         'ExtUtils::MakeMaker' => 6.64,
