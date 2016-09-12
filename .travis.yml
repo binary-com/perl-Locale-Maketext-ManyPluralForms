@@ -14,6 +14,8 @@ before_install:
     - "cpanm -n Test::More"
     - "cpanm -n File::Spec::Functions"
     - "cpanm -n File::Basename"
+    - "cpanm -n Locale::Maketext::Lexicon"
+    - "cpanm -n Locale::Maketext"
     - "cpanm -n --installdeps ."
 script:
     perl Makefile.PL && make test
