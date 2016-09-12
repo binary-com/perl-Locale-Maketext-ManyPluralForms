@@ -1,5 +1,8 @@
 Revision history for Perl module Locale::Maketext::ManyPluralForms
 
+0.03 Mon Sep  12 2016
+    - Added debug.
+
 0.02 Thu Jul  14 16:00:00 2016
     - Travis.yml chnges.
 

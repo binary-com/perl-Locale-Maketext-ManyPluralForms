@@ -22,6 +22,7 @@ WriteMakefile(
         'Test::More'                => 0,
         'File::Spec::Functions'     => 0,
         'File::Basename'            => 0,
+        'Encode'                    => 0,
         'Locale::Maketext::Lexicon' => 0,
         'Locale::Maketext'          => 0,
     },
