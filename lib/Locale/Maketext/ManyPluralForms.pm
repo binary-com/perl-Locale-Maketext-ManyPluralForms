@@ -5,8 +5,6 @@ use warnings;
 
 our $VERSION = '0.03';
 
-use Encode qw/encode_utf8/;
-
 require Locale::Maketext::Lexicon;
 
 use parent 'Locale::Maketext';
