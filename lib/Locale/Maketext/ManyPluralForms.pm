@@ -18,6 +18,10 @@ sub import {
 
 sub plural {
     my ($self, $num, @strings) = @_;
+    unless (defined $num) {
+        warn 'Use of uninitialized value $num in '. ref($self). " with params: '". join(";", @strings) ."'";
+        $num = 1;
+    }
     unless ($self->{_plural}) {
         my $class = ref $self;
         no strict 'refs';    ## no critic
@@ -34,13 +38,6 @@ sub plural {
     }
     my $pos = $self->{_plural}($num);
     $pos = $#strings if $pos > $#strings;
-    unless (defined $num) {
-        my @encoded_params;
-        eval {@encoded_params = map {encode_utf8($_)} @strings};
-        my $param_dump = join ";", (@encoded_params ? @encoded_params : @strings);
-        warn 'Use of uninitialized value $num in '. ref($self). " with params: '". $param_dump ."'";
-        $num = 1;
-    }
     return sprintf $strings[$pos], $num;
 }
 

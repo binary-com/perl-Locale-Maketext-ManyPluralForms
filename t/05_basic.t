@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::Warn;
 
 use File::Spec::Functions qw(rel2abs);
 use File::Basename;
@@ -19,5 +20,8 @@ my $lh = Locale::Maketext::ManyPluralForms->get_handle('ru');
 is $lh->maketext("[_1] cup", 1), '1 чашка';
 is $lh->maketext("[_1] cup", 3), '3 чашки';
 is $lh->maketext("[_1] cup", 7), '7 чашек';
+my $res;
+warning_like {$res = $lh->maketext("[_1] cup", undef)} qr/Use of uninitialized value \$num in Locale::Maketext::ManyPluralForms::ru with params/i;
+is $res, '1 чашка';
 
 done_testing();
