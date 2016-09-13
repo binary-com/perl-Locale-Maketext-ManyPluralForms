@@ -20,7 +20,7 @@ sub plural {
     my ($self, $num, @strings) = @_;
     unless (defined $num) {
         warn 'Use of uninitialized value $num in '. ref($self). " with params: '". join(";", @strings) ."'";
-        $num = 1;
+        $num = 0;
     }
     unless ($self->{_plural}) {
         my $class = ref $self;

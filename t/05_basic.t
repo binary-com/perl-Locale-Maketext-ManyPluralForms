@@ -22,6 +22,6 @@ is $lh->maketext("[_1] cup", 3), '3 чашки';
 is $lh->maketext("[_1] cup", 7), '7 чашек';
 my $res;
 warning_like {$res = $lh->maketext("[_1] cup", undef)} qr/Use of uninitialized value \$num in Locale::Maketext::ManyPluralForms::ru with params/i;
-is $res, '1 чашка';
+is $res, '0 чашек';
 
 done_testing();
