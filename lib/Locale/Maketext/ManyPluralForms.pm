@@ -3,7 +3,7 @@ package Locale::Maketext::ManyPluralForms;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 require Locale::Maketext::Lexicon;
 
@@ -16,6 +16,10 @@ sub import {
 
 sub plural {
     my ($self, $num, @strings) = @_;
+    unless (defined $num) {
+        warn 'Use of uninitialized value $num in '. ref($self). " with params: '". join(";", @strings) ."'";
+        $num = 0;
+    }
     unless ($self->{_plural}) {
         my $class = ref $self;
         no strict 'refs';    ## no critic

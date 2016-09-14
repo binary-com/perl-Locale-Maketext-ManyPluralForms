@@ -20,6 +20,7 @@ WriteMakefile(
     PREREQ_PM => {
         'Test::Simple'              => 0.44,
         'Test::More'                => 0,
+        'Test::Warn'                => 0,
         'File::Spec::Functions'     => 0,
         'File::Basename'            => 0,
         'Locale::Maketext::Lexicon' => 0,
