@@ -19,5 +19,9 @@ before_install:
     - "cpanm -n Locale::Maketext::Lexicon"
     - "cpanm -n Locale::Maketext"
     - "cpanm -n --installdeps ."
+    - "cpanm -qn Test::Requires::Git"
+    - "cpanm -qn Devel::Cover::Report::Codecov"
 script:
     perl Makefile.PL && make test
+after_success:
+    cover -test -report codecov
