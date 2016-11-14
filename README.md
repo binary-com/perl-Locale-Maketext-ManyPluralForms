@@ -1,5 +1,7 @@
 # perl-Locale-Maketext-ManyPluralForms
 [![Build Status](https://travis-ci.org/binary-com/perl-Locale-Maketext-ManyPluralForms.svg?branch=master)](https://travis-ci.org/binary-com/perl-Locale-Maketext-ManyPluralForms)
+[![codecov](https://codecov.io/gh/binary-com/perl-Locale-Maketext-ManyPluralForms/branch/master/graph/badge.svg)](https://codecov.io/gh/binary-com/perl-Locale-Maketext-ManyPluralForms)
+
 
 #### INSTALLATION
 
