@@ -11,7 +11,7 @@ use parent 'Locale::Maketext';
 
 sub import {
     shift;
-    Locale::Maketext::Lexicon->import(@_);
+    return Locale::Maketext::Lexicon->import(@_);
 }
 
 sub plural {
@@ -29,7 +29,7 @@ sub plural {
             $header =~ s/\[_([0-9]+)\]/%$1/g;
             die "Invalid expression for plural: $header" if $header =~ /\$|n\s*\(|[A-Za-mo-z]|nn/;
             $header =~ s/n/\$_[0]/g;
-            eval "\$self->{_plural} = sub { return $header }";
+            eval "\$self->{_plural} = sub { return $header }"; ## no critic (ProhibitStringyEval RequireCheckingReturnValueOfEval)
         } else {
             $self->{_plural} = sub { return $_[0] != 1 };
         }
