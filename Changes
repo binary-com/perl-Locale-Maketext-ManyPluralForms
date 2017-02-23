@@ -1,5 +1,8 @@
 Revision history for Perl module Locale::Maketext::ManyPluralForms
 
+{{$NEXT}}
+   Switch to dzil
+
 0.03 Mon Sep  12 2016
     - Added debug.
 

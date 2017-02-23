@@ -1,5 +1,5 @@
 package Locale::Maketext::ManyPluralForms;
-
+# ABSTRACT: internationalisation with many plural forms
 use strict;
 use warnings;
 
