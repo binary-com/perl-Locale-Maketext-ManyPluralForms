@@ -1,9 +1,0 @@
-MANIFEST
-README.md
-LICENSE
-Changes
-Makefile.PL
-lib/Locale/Maketext/ManyPluralForms.pm
-t/05_basic.t
-t/ru.po
-.travis.yml
